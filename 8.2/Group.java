@@ -38,7 +38,7 @@ public class Group {
     }
 
     public void addStudent(Student student) throws GroupOverflowException{
-        if(studentInGroup(student) == false){
+        if(!studentInGroup(student)){
             for (int i = 0; i < students.length; i++) {
                 if (students[i] == null) {
                     students[i] = student;
@@ -72,7 +72,7 @@ public class Group {
         return  false;
     }
 
-    public void SortStudentsByLastName(){
+    public void sortStudentsByLastName(){
         Arrays.sort(students, Comparator.nullsFirst(new SortStudentsByLastName()));
         for(int i = 0; i < students.length; i++){
             System.out.println();
