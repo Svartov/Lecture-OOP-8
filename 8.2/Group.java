@@ -45,8 +45,8 @@ public class Group {
                     return;
                 }
             }
+                 throw new GroupOverflowException();
         }
-        throw new GroupOverflowException();
     }
 
     public Student searchStudentByLastName(String lastName) throws StudentNotFoundException{
